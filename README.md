@@ -1,101 +1,100 @@
-# GovernanceDemo
+# Governance Demo for `@anarchitects/nx-governance`
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This repository is a standalone Nx workspace that demonstrates governance remediation in stages using the installed `@anarchitects/nx-governance` plugin targets.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## What This Repo Is
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- A practical demo workspace, not the plugin source code.
+- A branch-by-branch remediation narrative showing how governance metrics improve over time.
+- A reproducible reference for running governance reports through Nx targets.
 
-## Run tasks
+## Plugin Context
 
-To run the dev server for your app, use:
+`@anarchitects/nx-governance` evaluates Nx workspace structure and reports:
 
-```sh
-npx nx serve governance-demo
+- domain and layer boundary integrity
+- dependency complexity and architectural entropy
+- ownership coverage
+- documentation completeness
+- snapshot drift between stages
+
+This workspace uses plugin targets registered in `package.json` (`repo-health`, `repo-snapshot`, `repo-drift`, `workspace-graph`, `repo-ai-scorecard`, etc.).
+
+## Demo Intent and Purpose
+
+The demo intentionally starts from a poor baseline, then applies three remediation phases to show measurable change:
+
+1. Structural boundary stabilization
+2. Ownership and documentation recovery
+3. Dependency complexity reduction
+
+The goal is to make governance outcomes visible, auditable, and easy to replay from git branches.
+
+## Branch Model
+
+- `main`: initial setup with governance plugin installed
+- `stage-0-baseline`: intentionally degraded architecture + baseline artifacts
+- `stage-1-boundary-stabilization`: cross-domain and layer fixes
+- `stage-2-ownership-docs`: metadata coverage recovery
+- `stage-3-dependency-complexity`: fanout reduction + final packaging
+
+## Current Score Progression
+
+- Baseline: `40 (F)`
+- Branch 1: `70 (C)`
+- Branch 2: `89 (B)`
+- Branch 3: `95 (A)`
+
+Detailed stage summaries live under `reports/*/stage-summary.md`.
+
+## Repository Layout
+
+- `tools/governance/profiles/angular-cleanup.json`: governance profile used by targets
+- `tools/governance/eslint/dependency-constraints.mjs`: shared dep-constraint source for governance/ESLint alignment
+- `reports/baseline`: baseline outputs and snapshot reference
+- `reports/branch-1`, `reports/branch-2`, `reports/branch-3`: per-stage snapshot, drift, health, and summary artifacts
+- `docs/walkthrough.md`: step-by-step branch narrative and command flow
+
+## Usage
+
+Run all commands from workspace root.
+
+### Baseline
+
+```bash
+yarn nx workspace-graph > reports/baseline/workspace-graph.txt
+yarn nx repo-snapshot --output=json > reports/baseline/baseline-snapshot.json
+yarn nx repo-health --output=json > reports/baseline/baseline-health-report.json
 ```
 
-To create a production bundle:
+### Branch 1
 
-```sh
-npx nx build governance-demo
+```bash
+yarn nx repo-snapshot --output=json > reports/branch-1/branch-1-snapshot.json
+yarn nx repo-drift --baseline=.governance-metrics/snapshots/2026-03-20T10-59-26.json --output=cli > reports/branch-1/branch-1-drift-report.txt
+yarn nx repo-health --output=json > reports/branch-1/branch-1-health-report.json
 ```
 
-To see all available targets to run for a project, run:
+### Branch 2
 
-```sh
-npx nx show project governance-demo
+```bash
+yarn nx repo-snapshot --output=json > reports/branch-2/branch-2-snapshot.json
+yarn nx repo-drift --baseline=.governance-metrics/snapshots/2026-03-20T10-59-26.json --output=cli > reports/branch-2/branch-2-drift-report.txt
+yarn nx repo-health --output=json > reports/branch-2/branch-2-health-report.json
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+### Branch 3
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/angular:app demo
+```bash
+yarn nx repo-snapshot --output=json > reports/branch-3/branch-3-snapshot.json
+yarn nx repo-drift --baseline=.governance-metrics/snapshots/2026-03-20T10-59-26.json --output=cli > reports/branch-3/branch-3-drift-report.txt
+yarn nx repo-health --output=json > reports/branch-3/branch-3-health-report.json
+yarn nx repo-ai-scorecard --output=json > reports/branch-3/branch-3-scorecard.json
 ```
 
-To generate a new library, use:
+## Notes
 
-```sh
-npx nx g @nx/angular:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- `workspace-graph` does not support `--output`; redirect stdout to file if needed.
+- The canonical baseline snapshot path used in drift comparisons is:
+  `.governance-metrics/snapshots/2026-03-20T10-59-26.json`
+- This repo intentionally keeps stage artifacts in git for demo clarity.
