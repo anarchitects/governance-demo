@@ -32,6 +32,13 @@ This exact snapshot path is the baseline reference for all later `repo-drift` co
 - `layer-boundary`: 16
 - `ownership-presence`: 10
 
+## Findings Context
+
+- Cross-domain violations are concentrated in `shop <-> payments/orders` and `shared -> shop/payments/orders` dependencies.
+- Layer violations are concentrated in reversed edges such as `data-access -> feature/ui` and `util -> feature/ui`.
+- Ownership and documentation are both missing across every project, so accountability and repo context are absent.
+- Dependency graph density is intentionally high (`49` dependencies across `10` projects), amplifying entropy.
+
 ## Intentional Anti-Patterns Included
 
 - same-layer feature leak (`feature-cart -> feature-checkout`)

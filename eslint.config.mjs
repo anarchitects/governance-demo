@@ -19,7 +19,16 @@ export default [
             '**/*.mjs',
         ],
         // Override or add rules here
-        rules: {},
+        rules: {
+            '@nx/enforce-module-boundaries': [
+                'error',
+                {
+                    enforceBuildableLibDependency: true,
+                    allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
+                    depConstraints: governanceDepConstraints,
+                },
+            ],
+        },
     },
     ...nx.configs['flat/angular'],
     ...nx.configs['flat/angular-template'],
