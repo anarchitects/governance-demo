@@ -1,0 +1,53 @@
+
+> nx run governance-demo:repo-snapshot --output=json
+
+{
+  "snapshotPath": ".governance-metrics/snapshots/2026-03-20T11-35-48.json",
+  "snapshot": {
+    "timestamp": "2026-03-20T11:35:48.378Z",
+    "repo": "governance-demo",
+    "branch": "stage-2-ownership-docs",
+    "commitSha": "890eb23",
+    "pluginVersion": "0.1.0",
+    "metricSchemaVersion": "1.0",
+    "metrics": {
+      "architectural-entropy": 0.0769,
+      "dependency-complexity": 0.65,
+      "domain-integrity": 0,
+      "ownership-coverage": 0.8,
+      "documentation-completeness": 0.8,
+      "layer-integrity": 0
+    },
+    "scores": {
+      "workspaceHealth": 89,
+      "architectural-entropy": 92,
+      "dependency-complexity": 35,
+      "domain-integrity": 100,
+      "ownership-coverage": 80,
+      "documentation-completeness": 80,
+      "layer-integrity": 100
+    },
+    "violations": [
+      {
+        "type": "ownership-presence",
+        "source": "e2e",
+        "ruleId": "ownership-presence",
+        "severity": "warning",
+        "message": "Project e2e has no ownership metadata or CODEOWNERS mapping."
+      },
+      {
+        "type": "ownership-presence",
+        "source": "governance-demo",
+        "ruleId": "ownership-presence",
+        "severity": "warning",
+        "message": "Project governance-demo has no ownership metadata or CODEOWNERS mapping."
+      }
+    ]
+  }
+}
+
+
+
+ NX   Successfully ran target repo-snapshot for project governance-demo
+
+

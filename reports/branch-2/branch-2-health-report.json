@@ -1,0 +1,470 @@
+
+> nx run governance-demo:repo-health --output=json
+
+{
+  "workspace": {
+    "id": "workspace",
+    "name": "workspace",
+    "root": "/Users/johanvrolix/Anarchitects/governance-demo",
+    "projects": [
+      {
+        "id": "feature-payment",
+        "name": "feature-payment",
+        "root": "libs/payments/feature-payment",
+        "type": "library",
+        "tags": [
+          "domain:payments",
+          "layer:feature"
+        ],
+        "domain": "payments",
+        "layer": "feature",
+        "ownership": {
+          "team": "@payments/feature",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@payments/feature"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "feature-checkout",
+        "name": "feature-checkout",
+        "root": "libs/shop/feature-checkout",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:feature"
+        ],
+        "domain": "shop",
+        "layer": "feature",
+        "ownership": {
+          "team": "@shop/checkout",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@shop/checkout"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "feature-order",
+        "name": "feature-order",
+        "root": "libs/orders/feature-order",
+        "type": "library",
+        "tags": [
+          "domain:orders",
+          "layer:feature"
+        ],
+        "domain": "orders",
+        "layer": "feature",
+        "ownership": {
+          "team": "@orders/feature",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@orders/feature"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "feature-cart",
+        "name": "feature-cart",
+        "root": "libs/shop/feature-cart",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:feature"
+        ],
+        "domain": "shop",
+        "layer": "feature",
+        "ownership": {
+          "team": "@shop/cart",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@shop/cart"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "shop-data-access",
+        "name": "shop-data-access",
+        "root": "libs/shop/data-access",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:data-access"
+        ],
+        "domain": "shop",
+        "layer": "data-access",
+        "ownership": {
+          "team": "@shop/data",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@shop/data"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "shared-util",
+        "name": "shared-util",
+        "root": "libs/shared/util",
+        "type": "library",
+        "tags": [
+          "domain:shared",
+          "layer:util"
+        ],
+        "domain": "shared",
+        "layer": "util",
+        "ownership": {
+          "team": "@shared/util",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@shared/util"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "shared-ui",
+        "name": "shared-ui",
+        "root": "libs/shared/ui",
+        "type": "library",
+        "tags": [
+          "domain:shared",
+          "layer:ui"
+        ],
+        "domain": "shared",
+        "layer": "ui",
+        "ownership": {
+          "team": "@shared/ui",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@shared/ui"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "shop-ui",
+        "name": "shop-ui",
+        "root": "libs/shop/ui",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:ui"
+        ],
+        "domain": "shop",
+        "layer": "ui",
+        "ownership": {
+          "team": "@shop/ui",
+          "contacts": [],
+          "source": "project-metadata"
+        },
+        "metadata": {
+          "ownership": {
+            "team": "@shop/ui"
+          },
+          "documentation": true
+        }
+      },
+      {
+        "id": "e2e",
+        "name": "e2e",
+        "root": "e2e",
+        "type": "application",
+        "tags": [],
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {
+          "targetGroups": {
+            "E2E (CI)": [
+              "e2e-ci--src/example.spec.ts",
+              "e2e-ci",
+              "e2e-ci--merge-reports"
+            ]
+          }
+        }
+      },
+      {
+        "id": "governance-demo",
+        "name": "governance-demo",
+        "root": ".",
+        "type": "application",
+        "tags": [
+          "domain:shop",
+          "layer:app",
+          "npm:private"
+        ],
+        "domain": "shop",
+        "layer": "app",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {
+          "targetGroups": {},
+          "js": {
+            "packageName": "@governance-demo/source",
+            "packageVersion": "0.0.0",
+            "isInPackageManagerWorkspaces": true
+          }
+        }
+      }
+    ],
+    "dependencies": [
+      {
+        "source": "feature-payment",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-payment",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-order",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-order",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "shop-data-access",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "shared-ui",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "e2e",
+        "target": "governance-demo",
+        "type": "implicit"
+      },
+      {
+        "source": "governance-demo",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shop-ui",
+        "type": "static"
+      }
+    ]
+  },
+  "profile": "angular-cleanup",
+  "warnings": [
+    "Boundary policy source is ESLint constraints (tools/governance/eslint/dependency-constraints.mjs). Profile allowedDomainDependencies is treated as fallback."
+  ],
+  "violations": [
+    {
+      "id": "e2e-ownership",
+      "ruleId": "ownership-presence",
+      "project": "e2e",
+      "severity": "warning",
+      "message": "Project e2e has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "governance-demo-ownership",
+      "ruleId": "ownership-presence",
+      "project": "governance-demo",
+      "severity": "warning",
+      "message": "Project governance-demo has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    }
+  ],
+  "measurements": [
+    {
+      "id": "architectural-entropy",
+      "name": "Architectural Entropy",
+      "value": 0.0769,
+      "score": 92,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "dependency-complexity",
+      "name": "Dependency Complexity",
+      "value": 0.65,
+      "score": 35,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "domain-integrity",
+      "name": "Domain Integrity",
+      "value": 0,
+      "score": 100,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "ownership-coverage",
+      "name": "Ownership Coverage",
+      "value": 0.8,
+      "score": 80,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "documentation-completeness",
+      "name": "Documentation Completeness",
+      "value": 0.8,
+      "score": 80,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "layer-integrity",
+      "name": "Layer Integrity",
+      "value": 0,
+      "score": 100,
+      "maxScore": 100,
+      "unit": "ratio"
+    }
+  ],
+  "health": {
+    "score": 89,
+    "grade": "B",
+    "hotspots": [
+      "Dependency Complexity"
+    ]
+  },
+  "recommendations": [
+    {
+      "id": "improve-ownership-coverage",
+      "title": "Improve ownership coverage",
+      "priority": "medium",
+      "reason": "Unowned projects slow down incident response and architectural decision making."
+    },
+    {
+      "id": "reduce-dependency-complexity",
+      "title": "Reduce dependency complexity",
+      "priority": "medium",
+      "reason": "High dependency complexity increases blast radius and maintenance cost."
+    }
+  ]
+}
+
+
+
+ NX   Successfully ran target repo-health for project governance-demo
+
+

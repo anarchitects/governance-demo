@@ -12,5 +12,11 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
+  },
+  "metadata": {
+    "ownership": {
+      "team": "@shop/checkout"
+    },
+    "documentation": true
   }
 }
