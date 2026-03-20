@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import { governanceDepConstraints } from './tools/governance/eslint/dependency-constraints.mjs';
 
 export default [
   ...nx.configs['flat/base'],

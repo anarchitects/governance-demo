@@ -42,6 +42,9 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@anarchitects/nx-governance"
     }
   ],
   "generators": {

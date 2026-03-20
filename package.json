@@ -9,6 +9,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@anarchitects/nx-governance": "^0.2.0",
     "@angular-devkit/core": "~21.2.0",
     "@angular-devkit/schematics": "~21.2.0",
     "@angular/build": "~21.2.0",
@@ -43,7 +44,174 @@
     "vitest": "^4.0.8"
   },
   "nx": {
-    "includedScripts": []
+    "includedScripts": [],
+    "targets": {
+      "repo-health": {
+        "executor": "@anarchitects/nx-governance:repo-health",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "cli"
+        },
+        "metadata": {
+          "description": "Run governance health assessment for the workspace."
+        }
+      },
+      "repo-boundaries": {
+        "executor": "@anarchitects/nx-governance:repo-boundaries",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "cli"
+        },
+        "metadata": {
+          "description": "Run governance boundary checks for the workspace."
+        }
+      },
+      "repo-ownership": {
+        "executor": "@anarchitects/nx-governance:repo-ownership",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "cli"
+        },
+        "metadata": {
+          "description": "Run governance ownership checks for the workspace."
+        }
+      },
+      "repo-architecture": {
+        "executor": "@anarchitects/nx-governance:repo-architecture",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "cli"
+        },
+        "metadata": {
+          "description": "Run governance architecture checks for the workspace."
+        }
+      },
+      "repo-snapshot": {
+        "executor": "@anarchitects/nx-governance:repo-snapshot",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "cli"
+        },
+        "metadata": {
+          "description": "Persist governance metric snapshots for drift and AI analysis."
+        }
+      },
+      "repo-drift": {
+        "executor": "@anarchitects/nx-governance:repo-drift",
+        "options": {
+          "output": "cli"
+        },
+        "metadata": {
+          "description": "Compare recent governance snapshots and report drift signals."
+        }
+      },
+      "workspace-graph": {
+        "executor": "@anarchitects/nx-governance:workspace-graph",
+        "metadata": {
+          "description": "Print workspace project/dependency counts from the Nx graph for diagnostic baselining."
+        }
+      },
+      "repo-ai-root-cause": {
+        "executor": "@anarchitects/nx-governance:repo-ai-root-cause",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "topViolations": 10
+        },
+        "metadata": {
+          "description": "Prepare deterministic root-cause payloads for AI interpretation based on governance snapshots."
+        }
+      },
+      "repo-ai-drift": {
+        "executor": "@anarchitects/nx-governance:repo-ai-drift",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json"
+        },
+        "metadata": {
+          "description": "Prepare deterministic drift interpretation payloads from snapshot deltas and trend signals."
+        }
+      },
+      "repo-ai-pr-impact": {
+        "executor": "@anarchitects/nx-governance:repo-ai-pr-impact",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "baseRef": "main",
+          "headRef": "HEAD"
+        },
+        "metadata": {
+          "description": "Prepare deterministic PR architectural impact payloads for AI interpretation."
+        }
+      },
+      "repo-ai-cognitive-load": {
+        "executor": "@anarchitects/nx-governance:repo-ai-cognitive-load",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "topProjects": 10
+        },
+        "metadata": {
+          "description": "Prepare deterministic cognitive-load analysis payloads from dependency and domain coupling signals."
+        }
+      },
+      "repo-ai-recommendations": {
+        "executor": "@anarchitects/nx-governance:repo-ai-recommendations",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "topViolations": 10
+        },
+        "metadata": {
+          "description": "Prepare deterministic architecture recommendations from violations, dependencies, and trend signals."
+        }
+      },
+      "repo-ai-smell-clusters": {
+        "executor": "@anarchitects/nx-governance:repo-ai-smell-clusters",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "topViolations": 10
+        },
+        "metadata": {
+          "description": "Prepare deterministic architecture smell cluster analysis from prioritized violations and snapshot persistence signals."
+        }
+      },
+      "repo-ai-refactoring-suggestions": {
+        "executor": "@anarchitects/nx-governance:repo-ai-refactoring-suggestions",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "topViolations": 10,
+          "topProjects": 5
+        },
+        "metadata": {
+          "description": "Prepare deterministic AI refactoring suggestions from hotspot, fanout, and persistent smell signals."
+        }
+      },
+      "repo-ai-scorecard": {
+        "executor": "@anarchitects/nx-governance:repo-ai-scorecard",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json"
+        },
+        "metadata": {
+          "description": "Prepare deterministic AI governance scorecards from health, violations, and drift trend signals."
+        }
+      },
+      "repo-ai-onboarding": {
+        "executor": "@anarchitects/nx-governance:repo-ai-onboarding",
+        "options": {
+          "profile": "angular-cleanup",
+          "output": "json",
+          "topViolations": 10,
+          "topProjects": 5
+        },
+        "metadata": {
+          "description": "Prepare deterministic AI onboarding briefs from inventory, dependency, and governance hotspot signals."
+        }
+      }
+    }
   },
   "packageManager": "yarn@4.13.0",
   "dependencies": {
