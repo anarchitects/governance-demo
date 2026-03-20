@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SharedUi } from '@governance-demo/shared-ui';
 import { SharedUtil } from '@governance-demo/shared-util';
 
 @Component({
@@ -9,5 +8,5 @@ import { SharedUtil } from '@governance-demo/shared-util';
   styleUrl: './feature-order.css',
 })
 export class FeatureOrder {
-  readonly baselineDependencies = [SharedUi, SharedUtil];
+  readonly baselineDependencies = [SharedUtil];
 }

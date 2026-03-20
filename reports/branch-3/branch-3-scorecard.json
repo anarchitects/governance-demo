@@ -1,0 +1,274 @@
+
+> nx run governance-demo:repo-ai-scorecard --output=json
+
+{
+  "request": {
+    "kind": "scorecard",
+    "generatedAt": "2026-03-20T12:08:08.920Z",
+    "profile": "angular-cleanup",
+    "inputs": {
+      "snapshot": {
+        "timestamp": "2026-03-20T12:08:04.206Z",
+        "repo": "governance-demo",
+        "branch": "stage-3-dependency-complexity",
+        "commitSha": "1d237d1",
+        "pluginVersion": "0.1.0",
+        "metricSchemaVersion": "1.0",
+        "metrics": {
+          "architectural-entropy": 0,
+          "dependency-complexity": 0.325,
+          "domain-integrity": 0,
+          "ownership-coverage": 1,
+          "documentation-completeness": 0.8,
+          "layer-integrity": 0
+        },
+        "scores": {
+          "workspaceHealth": 95,
+          "architectural-entropy": 100,
+          "dependency-complexity": 68,
+          "domain-integrity": 100,
+          "ownership-coverage": 100,
+          "documentation-completeness": 80,
+          "layer-integrity": 100
+        },
+        "violations": []
+      },
+      "comparison": {
+        "baseline": {
+          "timestamp": "2026-03-20T12:07:23.196Z",
+          "repo": "governance-demo",
+          "branch": "stage-3-dependency-complexity",
+          "commitSha": "1d237d1",
+          "pluginVersion": "0.1.0",
+          "metricSchemaVersion": "1.0",
+          "metrics": {
+            "architectural-entropy": 0.1538,
+            "dependency-complexity": 0.325,
+            "domain-integrity": 0,
+            "ownership-coverage": 0.8,
+            "documentation-completeness": 0.8,
+            "layer-integrity": 0
+          },
+          "scores": {
+            "workspaceHealth": 91,
+            "architectural-entropy": 85,
+            "dependency-complexity": 68,
+            "domain-integrity": 100,
+            "ownership-coverage": 80,
+            "documentation-completeness": 80,
+            "layer-integrity": 100
+          },
+          "violations": [
+            {
+              "type": "ownership-presence",
+              "source": "e2e",
+              "ruleId": "ownership-presence",
+              "severity": "warning",
+              "message": "Project e2e has no ownership metadata or CODEOWNERS mapping."
+            },
+            {
+              "type": "ownership-presence",
+              "source": "governance-demo",
+              "ruleId": "ownership-presence",
+              "severity": "warning",
+              "message": "Project governance-demo has no ownership metadata or CODEOWNERS mapping."
+            }
+          ]
+        },
+        "current": {
+          "timestamp": "2026-03-20T12:08:04.206Z",
+          "repo": "governance-demo",
+          "branch": "stage-3-dependency-complexity",
+          "commitSha": "1d237d1",
+          "pluginVersion": "0.1.0",
+          "metricSchemaVersion": "1.0",
+          "metrics": {
+            "architectural-entropy": 0,
+            "dependency-complexity": 0.325,
+            "domain-integrity": 0,
+            "ownership-coverage": 1,
+            "documentation-completeness": 0.8,
+            "layer-integrity": 0
+          },
+          "scores": {
+            "workspaceHealth": 95,
+            "architectural-entropy": 100,
+            "dependency-complexity": 68,
+            "domain-integrity": 100,
+            "ownership-coverage": 100,
+            "documentation-completeness": 80,
+            "layer-integrity": 100
+          },
+          "violations": []
+        },
+        "metricDeltas": [
+          {
+            "id": "architectural-entropy",
+            "baseline": 0.1538,
+            "current": 0,
+            "delta": -0.154
+          },
+          {
+            "id": "dependency-complexity",
+            "baseline": 0.325,
+            "current": 0.325,
+            "delta": 0
+          },
+          {
+            "id": "documentation-completeness",
+            "baseline": 0.8,
+            "current": 0.8,
+            "delta": 0
+          },
+          {
+            "id": "domain-integrity",
+            "baseline": 0,
+            "current": 0,
+            "delta": 0
+          },
+          {
+            "id": "layer-integrity",
+            "baseline": 0,
+            "current": 0,
+            "delta": 0
+          },
+          {
+            "id": "ownership-coverage",
+            "baseline": 0.8,
+            "current": 1,
+            "delta": 0.2
+          }
+        ],
+        "scoreDeltas": [
+          {
+            "id": "architectural-entropy",
+            "baseline": 85,
+            "current": 100,
+            "delta": 15
+          },
+          {
+            "id": "dependency-complexity",
+            "baseline": 68,
+            "current": 68,
+            "delta": 0
+          },
+          {
+            "id": "documentation-completeness",
+            "baseline": 80,
+            "current": 80,
+            "delta": 0
+          },
+          {
+            "id": "domain-integrity",
+            "baseline": 100,
+            "current": 100,
+            "delta": 0
+          },
+          {
+            "id": "layer-integrity",
+            "baseline": 100,
+            "current": 100,
+            "delta": 0
+          },
+          {
+            "id": "ownership-coverage",
+            "baseline": 80,
+            "current": 100,
+            "delta": 20
+          },
+          {
+            "id": "workspaceHealth",
+            "baseline": 91,
+            "current": 95,
+            "delta": 4
+          }
+        ],
+        "newViolations": [],
+        "resolvedViolations": [
+          {
+            "type": "ownership-presence",
+            "source": "e2e",
+            "ruleId": "ownership-presence",
+            "severity": "warning",
+            "message": "Project e2e has no ownership metadata or CODEOWNERS mapping."
+          },
+          {
+            "type": "ownership-presence",
+            "source": "governance-demo",
+            "ruleId": "ownership-presence",
+            "severity": "warning",
+            "message": "Project governance-demo has no ownership metadata or CODEOWNERS mapping."
+          }
+        ]
+      },
+      "metadata": {
+        "snapshotPath": ".governance-metrics/snapshots/2026-03-20T12-08-04.json",
+        "workspaceHealthScore": 95,
+        "workspaceHealthGrade": "A",
+        "totalViolations": 0,
+        "measurementsCount": 6,
+        "snapshotCount": 5
+      }
+    }
+  },
+  "analysis": {
+    "kind": "scorecard",
+    "summary": "Deterministic governance scorecard: 95 (A), trend improving, 0 violations.",
+    "findings": [
+      {
+        "id": "scorecard-overall-health",
+        "title": "Overall Governance Health",
+        "detail": "Workspace health score is 95 (grade A).",
+        "signals": [
+          "workspace-health",
+          "metric-scores"
+        ],
+        "confidence": 1
+      },
+      {
+        "id": "scorecard-violation-footprint",
+        "title": "Violation Footprint",
+        "detail": "0 violations recorded with no dominant type cluster.",
+        "signals": [
+          "violations",
+          "rule-distribution"
+        ],
+        "confidence": 1
+      },
+      {
+        "id": "scorecard-trend",
+        "title": "Score Trend",
+        "detail": "Score trend is improving (delta 4.00)",
+        "signals": [
+          "snapshots",
+          "drift-analysis"
+        ],
+        "confidence": 1
+      }
+    ],
+    "recommendations": [
+      {
+        "id": "scorecard-maintain-momentum",
+        "title": "Maintain Current Governance Momentum",
+        "priority": "low",
+        "reason": "Health score is strong. Continue trend monitoring and prevent regressions with regular governance checks."
+      }
+    ],
+    "metadata": {
+      "workspaceHealthScore": 95,
+      "workspaceHealthGrade": "A",
+      "trend": "improving",
+      "scoreDelta": 4,
+      "violationCount": 0,
+      "topViolationTypes": [],
+      "baselineTimestamp": "2026-03-20T12:07:23.196Z",
+      "currentTimestamp": "2026-03-20T12:08:04.206Z"
+    }
+  }
+}
+
+
+
+ NX   Successfully ran target repo-ai-scorecard for project governance-demo
+
+

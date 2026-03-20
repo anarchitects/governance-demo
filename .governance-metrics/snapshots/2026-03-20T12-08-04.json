@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-03-20T12:08:04.206Z",
+  "repo": "governance-demo",
+  "branch": "stage-3-dependency-complexity",
+  "commitSha": "1d237d1",
+  "pluginVersion": "0.1.0",
+  "metricSchemaVersion": "1.0",
+  "metrics": {
+    "architectural-entropy": 0,
+    "dependency-complexity": 0.325,
+    "domain-integrity": 0,
+    "ownership-coverage": 1,
+    "documentation-completeness": 0.8,
+    "layer-integrity": 0
+  },
+  "scores": {
+    "workspaceHealth": 95,
+    "architectural-entropy": 100,
+    "dependency-complexity": 68,
+    "domain-integrity": 100,
+    "ownership-coverage": 100,
+    "documentation-completeness": 80,
+    "layer-integrity": 100
+  },
+  "violations": []
+}

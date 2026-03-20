@@ -5,11 +5,16 @@
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "./src",
-  "tags": ["domain:shop", "layer:app"],
+  "tags": [
+    "domain:shop",
+    "layer:app"
+  ],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/governance-demo",
         "browser": "./src/main.ts",
@@ -20,7 +25,9 @@
             "input": "public"
           }
         ],
-        "styles": ["./src/styles.css"]
+        "styles": [
+          "./src/styles.css"
+        ]
       },
       "configurations": {
         "production": {
@@ -62,7 +69,9 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["./src"]
+        "lintFilePatterns": [
+          "./src"
+        ]
       }
     },
     "test": {
@@ -78,6 +87,11 @@
         "staticFilePath": "dist/governance-demo/browser",
         "spa": true
       }
+    }
+  },
+  "metadata": {
+    "ownership": {
+      "team": "@shop/app"
     }
   }
 }

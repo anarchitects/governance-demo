@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { SharedUi } from '@governance-demo/shared-ui';
-import { SharedUtil } from '@governance-demo/shared-util';
-import { ShopDataAccess } from '@governance-demo/shop-data-access';
 
 @Component({
   selector: 'lib-shop-ui',
@@ -10,5 +8,5 @@ import { ShopDataAccess } from '@governance-demo/shop-data-access';
   styleUrl: './shop-ui.css',
 })
 export class ShopUi {
-  readonly baselineDependencies = [SharedUi, SharedUtil, ShopDataAccess];
+  readonly baselineDependencies = [SharedUi];
 }
