@@ -1,0 +1,21 @@
+
+> nx run governance-demo:repo-drift --baseline=.governance-metrics/snapshots/2026-03-20T10-59-26.json --output=cli
+
+Nx Governance Drift Analysis
+Baseline: 2026-03-20T10:59:26.520Z
+Current: 2026-03-20T11:33:56.043Z
+Violation delta: +0 / -37
+Signals:
+- architectural-entropy: improving (magnitude 58.000)
+- dependency-complexity: improving (magnitude 35.000)
+- documentation-completeness: stable (magnitude 0.000)
+- domain-integrity: improving (magnitude 43.000)
+- layer-integrity: improving (magnitude 33.000)
+- ownership-coverage: stable (magnitude 0.000)
+- workspaceHealth: improving (magnitude 30.000)
+
+
+
+ NX   Successfully ran target repo-drift for project governance-demo
+
+

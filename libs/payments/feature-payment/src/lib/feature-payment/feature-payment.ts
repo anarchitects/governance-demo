@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { FeatureOrder } from '@governance-demo/feature-order';
 import { SharedUi } from '@governance-demo/shared-ui';
-import { ShopUi } from '@governance-demo/shop-ui';
+import { SharedUtil } from '@governance-demo/shared-util';
 
 @Component({
   selector: 'lib-feature-payment',
@@ -10,5 +9,5 @@ import { ShopUi } from '@governance-demo/shop-ui';
   styleUrl: './feature-payment.css',
 })
 export class FeaturePayment {
-  readonly baselineDependencies = [FeatureOrder, SharedUi, ShopUi];
+  readonly baselineDependencies = [SharedUi, SharedUtil];
 }

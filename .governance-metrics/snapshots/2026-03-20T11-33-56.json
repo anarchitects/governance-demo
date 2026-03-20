@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-03-20T11:33:56.043Z",
+  "repo": "governance-demo",
+  "branch": "stage-1-boundary-stabilization",
+  "commitSha": "c6bebdb",
+  "pluginVersion": "0.1.0",
+  "metricSchemaVersion": "1.0",
+  "metrics": {
+    "architectural-entropy": 0.3846,
+    "dependency-complexity": 0.65,
+    "domain-integrity": 0,
+    "ownership-coverage": 0,
+    "documentation-completeness": 0,
+    "layer-integrity": 0
+  },
+  "scores": {
+    "workspaceHealth": 70,
+    "architectural-entropy": 62,
+    "dependency-complexity": 35,
+    "domain-integrity": 100,
+    "ownership-coverage": 0,
+    "documentation-completeness": 0,
+    "layer-integrity": 100
+  },
+  "violations": [
+    {
+      "type": "ownership-presence",
+      "source": "feature-payment",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project feature-payment has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "feature-checkout",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project feature-checkout has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "feature-order",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project feature-order has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "feature-cart",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project feature-cart has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "shop-data-access",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project shop-data-access has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "shared-util",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project shared-util has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "shared-ui",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project shared-ui has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "shop-ui",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project shop-ui has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "e2e",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project e2e has no ownership metadata or CODEOWNERS mapping."
+    },
+    {
+      "type": "ownership-presence",
+      "source": "governance-demo",
+      "ruleId": "ownership-presence",
+      "severity": "warning",
+      "message": "Project governance-demo has no ownership metadata or CODEOWNERS mapping."
+    }
+  ]
+}

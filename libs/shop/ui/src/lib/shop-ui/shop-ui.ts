@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { FeatureCart } from '@governance-demo/feature-cart';
-import { FeatureCheckout } from '@governance-demo/feature-checkout';
 import { SharedUi } from '@governance-demo/shared-ui';
 import { SharedUtil } from '@governance-demo/shared-util';
+import { ShopDataAccess } from '@governance-demo/shop-data-access';
 
 @Component({
   selector: 'lib-shop-ui',
@@ -11,10 +10,5 @@ import { SharedUtil } from '@governance-demo/shared-util';
   styleUrl: './shop-ui.css',
 })
 export class ShopUi {
-  readonly baselineDependencies = [
-    FeatureCart,
-    FeatureCheckout,
-    SharedUi,
-    SharedUtil,
-  ];
+  readonly baselineDependencies = [SharedUi, SharedUtil, ShopDataAccess];
 }
