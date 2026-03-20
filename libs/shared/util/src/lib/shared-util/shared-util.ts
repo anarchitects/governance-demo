@@ -1,31 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { FeatureCart } from '@governance-demo/feature-cart';
 import { FeatureCheckout } from '@governance-demo/feature-checkout';
 import { FeatureOrder } from '@governance-demo/feature-order';
 import { FeaturePayment } from '@governance-demo/feature-payment';
-import { SharedUi } from '@governance-demo/shared-ui';
-import { SharedUtil } from '@governance-demo/shared-util';
 import { ShopDataAccess } from '@governance-demo/shop-data-access';
 import { ShopUi } from '@governance-demo/shop-ui';
-import { NxWelcome } from './nx-welcome';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
-  selector: 'app-root',
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  selector: 'lib-shared-util',
+  imports: [],
+  templateUrl: './shared-util.html',
+  styleUrl: './shared-util.css',
 })
-export class App {
-  protected title = 'governance-demo';
-
-  readonly baselineFanout = [
+export class SharedUtil {
+  readonly baselineDependencies = [
     FeatureCart,
     FeatureCheckout,
     FeatureOrder,
     FeaturePayment,
-    SharedUi,
-    SharedUtil,
     ShopDataAccess,
     ShopUi,
   ];

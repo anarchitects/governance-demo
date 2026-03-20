@@ -1,0 +1,11 @@
+
+> nx run governance-demo:workspace-graph
+
+Projects: 10
+Dependencies: 49
+
+
+
+ NX   Successfully ran target workspace-graph for project governance-demo
+
+

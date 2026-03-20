@@ -1,0 +1,1180 @@
+
+> nx run governance-demo:repo-health --output=json
+
+{
+  "workspace": {
+    "id": "workspace",
+    "name": "workspace",
+    "root": "/Users/johanvrolix/Anarchitects/governance-demo",
+    "projects": [
+      {
+        "id": "feature-payment",
+        "name": "feature-payment",
+        "root": "libs/payments/feature-payment",
+        "type": "library",
+        "tags": [
+          "domain:payments",
+          "layer:feature"
+        ],
+        "domain": "payments",
+        "layer": "feature",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "feature-checkout",
+        "name": "feature-checkout",
+        "root": "libs/shop/feature-checkout",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:feature"
+        ],
+        "domain": "shop",
+        "layer": "feature",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "feature-order",
+        "name": "feature-order",
+        "root": "libs/orders/feature-order",
+        "type": "library",
+        "tags": [
+          "domain:orders",
+          "layer:feature"
+        ],
+        "domain": "orders",
+        "layer": "feature",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "feature-cart",
+        "name": "feature-cart",
+        "root": "libs/shop/feature-cart",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:feature"
+        ],
+        "domain": "shop",
+        "layer": "feature",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "shop-data-access",
+        "name": "shop-data-access",
+        "root": "libs/shop/data-access",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:data-access"
+        ],
+        "domain": "shop",
+        "layer": "data-access",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "shared-util",
+        "name": "shared-util",
+        "root": "libs/shared/util",
+        "type": "library",
+        "tags": [
+          "domain:shared",
+          "layer:util"
+        ],
+        "domain": "shared",
+        "layer": "util",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "shared-ui",
+        "name": "shared-ui",
+        "root": "libs/shared/ui",
+        "type": "library",
+        "tags": [
+          "domain:shared",
+          "layer:ui"
+        ],
+        "domain": "shared",
+        "layer": "ui",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "shop-ui",
+        "name": "shop-ui",
+        "root": "libs/shop/ui",
+        "type": "library",
+        "tags": [
+          "domain:shop",
+          "layer:ui"
+        ],
+        "domain": "shop",
+        "layer": "ui",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {}
+      },
+      {
+        "id": "e2e",
+        "name": "e2e",
+        "root": "e2e",
+        "type": "application",
+        "tags": [],
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {
+          "targetGroups": {
+            "E2E (CI)": [
+              "e2e-ci--src/example.spec.ts",
+              "e2e-ci",
+              "e2e-ci--merge-reports"
+            ]
+          }
+        }
+      },
+      {
+        "id": "governance-demo",
+        "name": "governance-demo",
+        "root": ".",
+        "type": "application",
+        "tags": [
+          "domain:shop",
+          "layer:app",
+          "npm:private"
+        ],
+        "domain": "shop",
+        "layer": "app",
+        "ownership": {
+          "source": "none"
+        },
+        "metadata": {
+          "targetGroups": {},
+          "js": {
+            "packageName": "@governance-demo/source",
+            "packageVersion": "0.0.0",
+            "isInPackageManagerWorkspaces": true
+          }
+        }
+      }
+    ],
+    "dependencies": [
+      {
+        "source": "feature-payment",
+        "target": "feature-order",
+        "type": "static"
+      },
+      {
+        "source": "feature-payment",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-payment",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "feature-order",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "feature-payment",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "feature-checkout",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-order",
+        "target": "feature-payment",
+        "type": "static"
+      },
+      {
+        "source": "feature-order",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-order",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "feature-order",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "feature-payment",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "feature-cart",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "shop-data-access",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "shop-data-access",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "shop-data-access",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "shop-data-access",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "shop-data-access",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "shared-util",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "shared-util",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "shared-util",
+        "target": "feature-order",
+        "type": "static"
+      },
+      {
+        "source": "shared-util",
+        "target": "feature-payment",
+        "type": "static"
+      },
+      {
+        "source": "shared-util",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "shared-util",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "shared-ui",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "shared-ui",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "shared-ui",
+        "target": "feature-order",
+        "type": "static"
+      },
+      {
+        "source": "shared-ui",
+        "target": "feature-payment",
+        "type": "static"
+      },
+      {
+        "source": "shared-ui",
+        "target": "shop-ui",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "shop-ui",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "e2e",
+        "target": "governance-demo",
+        "type": "implicit"
+      },
+      {
+        "source": "governance-demo",
+        "target": "feature-cart",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "feature-checkout",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "feature-order",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "feature-payment",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shared-util",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shop-data-access",
+        "type": "static"
+      },
+      {
+        "source": "governance-demo",
+        "target": "shop-ui",
+        "type": "static"
+      }
+    ]
+  },
+  "profile": "angular-cleanup",
+  "warnings": [
+    "Boundary policy source is ESLint constraints (tools/governance/eslint/dependency-constraints.mjs). Profile allowedDomainDependencies is treated as fallback."
+  ],
+  "violations": [
+    {
+      "id": "feature-payment-feature-order-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-payment",
+      "severity": "error",
+      "message": "Project feature-payment in domain payments depends on feature-order in domain orders.",
+      "details": {
+        "sourceDomain": "payments",
+        "targetDomain": "orders",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-payment-shop-ui-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-payment",
+      "severity": "error",
+      "message": "Project feature-payment in domain payments depends on shop-ui in domain shop.",
+      "details": {
+        "sourceDomain": "payments",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-checkout-feature-order-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-checkout",
+      "severity": "error",
+      "message": "Project feature-checkout in domain shop depends on feature-order in domain orders.",
+      "details": {
+        "sourceDomain": "shop",
+        "targetDomain": "orders",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-checkout-feature-payment-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-checkout",
+      "severity": "error",
+      "message": "Project feature-checkout in domain shop depends on feature-payment in domain payments.",
+      "details": {
+        "sourceDomain": "shop",
+        "targetDomain": "payments",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-order-feature-payment-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-order",
+      "severity": "error",
+      "message": "Project feature-order in domain orders depends on feature-payment in domain payments.",
+      "details": {
+        "sourceDomain": "orders",
+        "targetDomain": "payments",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-order-shop-data-access-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-order",
+      "severity": "error",
+      "message": "Project feature-order in domain orders depends on shop-data-access in domain shop.",
+      "details": {
+        "sourceDomain": "orders",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-cart-feature-order-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-cart",
+      "severity": "error",
+      "message": "Project feature-cart in domain shop depends on feature-order in domain orders.",
+      "details": {
+        "sourceDomain": "shop",
+        "targetDomain": "orders",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-cart-feature-payment-domain",
+      "ruleId": "domain-boundary",
+      "project": "feature-cart",
+      "severity": "error",
+      "message": "Project feature-cart in domain shop depends on feature-payment in domain payments.",
+      "details": {
+        "sourceDomain": "shop",
+        "targetDomain": "payments",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shop-data-access-feature-cart-layer",
+      "ruleId": "layer-boundary",
+      "project": "shop-data-access",
+      "severity": "warning",
+      "message": "Layer violation: shop-data-access (data-access) depends on feature-cart (feature).",
+      "details": {
+        "sourceLayer": "data-access",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shop-data-access-feature-checkout-layer",
+      "ruleId": "layer-boundary",
+      "project": "shop-data-access",
+      "severity": "warning",
+      "message": "Layer violation: shop-data-access (data-access) depends on feature-checkout (feature).",
+      "details": {
+        "sourceLayer": "data-access",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shop-data-access-shared-ui-layer",
+      "ruleId": "layer-boundary",
+      "project": "shop-data-access",
+      "severity": "warning",
+      "message": "Layer violation: shop-data-access (data-access) depends on shared-ui (ui).",
+      "details": {
+        "sourceLayer": "data-access",
+        "targetLayer": "ui",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shop-data-access-shop-ui-layer",
+      "ruleId": "layer-boundary",
+      "project": "shop-data-access",
+      "severity": "warning",
+      "message": "Layer violation: shop-data-access (data-access) depends on shop-ui (ui).",
+      "details": {
+        "sourceLayer": "data-access",
+        "targetLayer": "ui",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-util-feature-cart-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-util",
+      "severity": "error",
+      "message": "Project shared-util in domain shared depends on feature-cart in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-util-feature-cart-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Layer violation: shared-util (util) depends on feature-cart (feature).",
+      "details": {
+        "sourceLayer": "util",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-util-feature-checkout-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-util",
+      "severity": "error",
+      "message": "Project shared-util in domain shared depends on feature-checkout in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-util-feature-checkout-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Layer violation: shared-util (util) depends on feature-checkout (feature).",
+      "details": {
+        "sourceLayer": "util",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-util-feature-order-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-util",
+      "severity": "error",
+      "message": "Project shared-util in domain shared depends on feature-order in domain orders.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "orders",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-util-feature-order-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Layer violation: shared-util (util) depends on feature-order (feature).",
+      "details": {
+        "sourceLayer": "util",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-util-feature-payment-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-util",
+      "severity": "error",
+      "message": "Project shared-util in domain shared depends on feature-payment in domain payments.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "payments",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-util-feature-payment-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Layer violation: shared-util (util) depends on feature-payment (feature).",
+      "details": {
+        "sourceLayer": "util",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-util-shop-data-access-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-util",
+      "severity": "error",
+      "message": "Project shared-util in domain shared depends on shop-data-access in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-util-shop-data-access-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Layer violation: shared-util (util) depends on shop-data-access (data-access).",
+      "details": {
+        "sourceLayer": "util",
+        "targetLayer": "data-access",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-util-shop-ui-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-util",
+      "severity": "error",
+      "message": "Project shared-util in domain shared depends on shop-ui in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-util-shop-ui-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Layer violation: shared-util (util) depends on shop-ui (ui).",
+      "details": {
+        "sourceLayer": "util",
+        "targetLayer": "ui",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-ui-feature-cart-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-ui",
+      "severity": "error",
+      "message": "Project shared-ui in domain shared depends on feature-cart in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-ui-feature-cart-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-ui",
+      "severity": "warning",
+      "message": "Layer violation: shared-ui (ui) depends on feature-cart (feature).",
+      "details": {
+        "sourceLayer": "ui",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-ui-feature-checkout-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-ui",
+      "severity": "error",
+      "message": "Project shared-ui in domain shared depends on feature-checkout in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-ui-feature-checkout-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-ui",
+      "severity": "warning",
+      "message": "Layer violation: shared-ui (ui) depends on feature-checkout (feature).",
+      "details": {
+        "sourceLayer": "ui",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-ui-feature-order-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-ui",
+      "severity": "error",
+      "message": "Project shared-ui in domain shared depends on feature-order in domain orders.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "orders",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-ui-feature-order-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-ui",
+      "severity": "warning",
+      "message": "Layer violation: shared-ui (ui) depends on feature-order (feature).",
+      "details": {
+        "sourceLayer": "ui",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-ui-feature-payment-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-ui",
+      "severity": "error",
+      "message": "Project shared-ui in domain shared depends on feature-payment in domain payments.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "payments",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shared-ui-feature-payment-layer",
+      "ruleId": "layer-boundary",
+      "project": "shared-ui",
+      "severity": "warning",
+      "message": "Layer violation: shared-ui (ui) depends on feature-payment (feature).",
+      "details": {
+        "sourceLayer": "ui",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shared-ui-shop-ui-domain",
+      "ruleId": "domain-boundary",
+      "project": "shared-ui",
+      "severity": "error",
+      "message": "Project shared-ui in domain shared depends on shop-ui in domain shop.",
+      "details": {
+        "sourceDomain": "shared",
+        "targetDomain": "shop",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "shop-ui-feature-cart-layer",
+      "ruleId": "layer-boundary",
+      "project": "shop-ui",
+      "severity": "warning",
+      "message": "Layer violation: shop-ui (ui) depends on feature-cart (feature).",
+      "details": {
+        "sourceLayer": "ui",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "shop-ui-feature-checkout-layer",
+      "ruleId": "layer-boundary",
+      "project": "shop-ui",
+      "severity": "warning",
+      "message": "Layer violation: shop-ui (ui) depends on feature-checkout (feature).",
+      "details": {
+        "sourceLayer": "ui",
+        "targetLayer": "feature",
+        "order": [
+          "app",
+          "feature",
+          "ui",
+          "data-access",
+          "util"
+        ]
+      },
+      "recommendation": "Refactor dependency direction so higher-level layers depend on same or lower-level layers only."
+    },
+    {
+      "id": "governance-demo-feature-order-domain",
+      "ruleId": "domain-boundary",
+      "project": "governance-demo",
+      "severity": "error",
+      "message": "Project governance-demo in domain shop depends on feature-order in domain orders.",
+      "details": {
+        "sourceDomain": "shop",
+        "targetDomain": "orders",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "governance-demo-feature-payment-domain",
+      "ruleId": "domain-boundary",
+      "project": "governance-demo",
+      "severity": "error",
+      "message": "Project governance-demo in domain shop depends on feature-payment in domain payments.",
+      "details": {
+        "sourceDomain": "shop",
+        "targetDomain": "payments",
+        "dependencyType": "static"
+      },
+      "recommendation": "Move the dependency behind an API or adjust domain boundaries in the governance profile."
+    },
+    {
+      "id": "feature-payment-ownership",
+      "ruleId": "ownership-presence",
+      "project": "feature-payment",
+      "severity": "warning",
+      "message": "Project feature-payment has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "feature-checkout-ownership",
+      "ruleId": "ownership-presence",
+      "project": "feature-checkout",
+      "severity": "warning",
+      "message": "Project feature-checkout has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "feature-order-ownership",
+      "ruleId": "ownership-presence",
+      "project": "feature-order",
+      "severity": "warning",
+      "message": "Project feature-order has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "feature-cart-ownership",
+      "ruleId": "ownership-presence",
+      "project": "feature-cart",
+      "severity": "warning",
+      "message": "Project feature-cart has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "shop-data-access-ownership",
+      "ruleId": "ownership-presence",
+      "project": "shop-data-access",
+      "severity": "warning",
+      "message": "Project shop-data-access has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "shared-util-ownership",
+      "ruleId": "ownership-presence",
+      "project": "shared-util",
+      "severity": "warning",
+      "message": "Project shared-util has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "shared-ui-ownership",
+      "ruleId": "ownership-presence",
+      "project": "shared-ui",
+      "severity": "warning",
+      "message": "Project shared-ui has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "shop-ui-ownership",
+      "ruleId": "ownership-presence",
+      "project": "shop-ui",
+      "severity": "warning",
+      "message": "Project shop-ui has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "e2e-ownership",
+      "ruleId": "ownership-presence",
+      "project": "e2e",
+      "severity": "warning",
+      "message": "Project e2e has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    },
+    {
+      "id": "governance-demo-ownership",
+      "ruleId": "ownership-presence",
+      "project": "governance-demo",
+      "severity": "warning",
+      "message": "Project governance-demo has no ownership metadata or CODEOWNERS mapping.",
+      "recommendation": "Add ownership metadata in project configuration or ensure CODEOWNERS covers the project root."
+    }
+  ],
+  "measurements": [
+    {
+      "id": "architectural-entropy",
+      "name": "Architectural Entropy",
+      "value": 0.9592,
+      "score": 4,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "dependency-complexity",
+      "name": "Dependency Complexity",
+      "value": 1,
+      "score": 0,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "domain-integrity",
+      "name": "Domain Integrity",
+      "value": 0.4286,
+      "score": 57,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "ownership-coverage",
+      "name": "Ownership Coverage",
+      "value": 0,
+      "score": 0,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "documentation-completeness",
+      "name": "Documentation Completeness",
+      "value": 0,
+      "score": 0,
+      "maxScore": 100,
+      "unit": "ratio"
+    },
+    {
+      "id": "layer-integrity",
+      "name": "Layer Integrity",
+      "value": 0.3265,
+      "score": 67,
+      "maxScore": 100,
+      "unit": "ratio"
+    }
+  ],
+  "health": {
+    "score": 40,
+    "grade": "F",
+    "hotspots": [
+      "Architectural Entropy",
+      "Dependency Complexity",
+      "Domain Integrity",
+      "Ownership Coverage",
+      "Documentation Completeness"
+    ]
+  },
+  "recommendations": [
+    {
+      "id": "reduce-cross-domain-dependencies",
+      "title": "Reduce cross-domain dependencies",
+      "priority": "high",
+      "reason": "Domain boundary violations indicate tight coupling across business domains."
+    },
+    {
+      "id": "improve-ownership-coverage",
+      "title": "Improve ownership coverage",
+      "priority": "medium",
+      "reason": "Unowned projects slow down incident response and architectural decision making."
+    },
+    {
+      "id": "reduce-dependency-complexity",
+      "title": "Reduce dependency complexity",
+      "priority": "medium",
+      "reason": "High dependency complexity increases blast radius and maintenance cost."
+    }
+  ]
+}
+
+
+
+ NX   Successfully ran target repo-health for project governance-demo
+
+

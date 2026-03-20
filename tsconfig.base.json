@@ -1,0 +1,51 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "preserve",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@governance-demo/feature-cart": [
+        "libs/shop/feature-cart/src/index.ts"
+      ],
+      "@governance-demo/feature-checkout": [
+        "libs/shop/feature-checkout/src/index.ts"
+      ],
+      "@governance-demo/shop-ui": [
+        "libs/shop/ui/src/index.ts"
+      ],
+      "@governance-demo/shop-data-access": [
+        "libs/shop/data-access/src/index.ts"
+      ],
+      "@governance-demo/feature-payment": [
+        "libs/payments/feature-payment/src/index.ts"
+      ],
+      "@governance-demo/feature-order": [
+        "libs/orders/feature-order/src/index.ts"
+      ],
+      "@governance-demo/shared-ui": [
+        "libs/shared/ui/src/index.ts"
+      ],
+      "@governance-demo/shared-util": [
+        "libs/shared/util/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

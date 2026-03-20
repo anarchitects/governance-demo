@@ -1,0 +1,16 @@
+{
+  "name": "shared-util",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/util/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [
+    "domain:shared",
+    "layer:util"
+  ],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
