@@ -1,0 +1,4 @@
+Root cause analysis:
+- Feature libraries directly import from unrelated domains
+- Shared utilities contain mixed responsibilities
+- Lack of enforced boundaries allows uncontrolled growth
