@@ -1,12 +1,44 @@
 # Governance Demo for `@anarchitects/nx-governance`
 
-This repository is a standalone Nx workspace that demonstrates governance remediation in stages using the installed `@anarchitects/nx-governance` plugin targets.
+This repository is the public demonstration workspace behind the Anarchitects **Architecture Health Assessment** and **Nx Governance** positioning.
+
+It shows how architectural health can be made visible, measured, improved and explained through a repeatable Nx-based governance workflow.
+
+## Why This Demo Exists
+
+An Architecture Health Assessment should not be based on gut feeling alone. This demo shows the evidence chain behind the assessment offer:
+
+1. Nx workspace graph and conformance data
+2. Deterministic governance signals
+3. Metrics and health scoring
+4. Architectural interpretation
+5. Prioritized remediation roadmap
+
+The goal is to demonstrate how a codebase can move from unclear structural risk to measurable architectural improvement.
 
 ## What This Repo Is
 
 - A practical demo workspace, not the plugin source code.
 - A branch-by-branch remediation narrative showing how governance metrics improve over time.
 - A reproducible reference for running governance reports through Nx targets.
+- A proof asset for the Codebase Governance / Architecture Health Assessment offer.
+
+## Assessment Narrative
+
+The demo intentionally starts from a poor baseline, then applies remediation in stages.
+
+| Stage | Focus | Score |
+| --- | --- | --- |
+| Baseline | Architectural drift and weak boundaries | `40 (F)` |
+| Branch 1 | Structural boundary stabilization | `70 (C)` |
+| Branch 2 | Ownership and documentation recovery | `89 (B)` |
+| Branch 3 | Dependency complexity reduction | `95 (A)` |
+
+This mirrors the client-facing assessment story:
+
+```text
+Measure the current structure -> identify signals -> interpret risk -> remediate -> prove improvement
+```
 
 ## Plugin Context
 
@@ -17,8 +49,42 @@ This repository is a standalone Nx workspace that demonstrates governance remedi
 - ownership coverage
 - documentation completeness
 - snapshot drift between stages
+- AI-ready deterministic payloads for interpretation and recommendations
 
-This workspace uses plugin targets registered in `package.json` (`repo-health`, `repo-snapshot`, `repo-drift`, `workspace-graph`, `repo-ai-scorecard`, etc.).
+This workspace uses plugin targets registered in `package.json`, including:
+
+- `repo-health`
+- `repo-boundaries`
+- `repo-ownership`
+- `repo-architecture`
+- `repo-snapshot`
+- `repo-drift`
+- `workspace-graph`
+- `repo-ai-scorecard`
+- `repo-ai-recommendations`
+- `repo-ai-refactoring-suggestions`
+
+## How This Supports the Architecture Health Assessment
+
+The Anarchitects website positions Codebase Governance as an assessment-led offer. This repository provides the technical proof behind that offer.
+
+### What the assessment makes visible
+
+- architecture health score
+- boundary leakage
+- dependency complexity
+- structural hotspots
+- ownership/documentation gaps
+- drift between stages or snapshots
+
+### What the assessment produces
+
+- Architecture Health Report
+- Hotspot & Risk Analysis
+- Refactoring Roadmap
+- governance rule recommendations
+- CI integration opportunities
+- AI-ready evidence payloads
 
 ## Demo Intent and Purpose
 
@@ -91,6 +157,15 @@ yarn nx repo-drift --baseline=.governance-metrics/snapshots/2026-03-20T10-59-26.
 yarn nx repo-health --output=json > reports/branch-3/branch-3-health-report.json
 yarn nx repo-ai-scorecard --output=json > reports/branch-3/branch-3-scorecard.json
 ```
+
+## Reading the Demo as a Buyer
+
+If you are evaluating the Architecture Health Assessment, read this repo as proof that the offer is grounded in deterministic signals:
+
+- the baseline shows structural risk
+- each remediation branch shows a measurable improvement step
+- the final scorecard shows how technical signals become executive-readable insight
+- the staged narrative demonstrates how assessment findings turn into a roadmap
 
 ## Notes
 
