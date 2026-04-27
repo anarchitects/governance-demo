@@ -1,0 +1,6 @@
+PR impact analysis:
+- This change introduces cross-domain dependency from booking to billing
+- Dependency fanout increases from 3 to 7
+- Risk: tighter coupling between domains
+Recommendation:
+- Refactor before merge or introduce a boundary layer
