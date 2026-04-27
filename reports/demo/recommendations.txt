@@ -1,0 +1,6 @@
+Top recommendations:
+1. Split shared libraries by ownership
+2. Enforce domain boundaries via lint + governance rules
+3. Reduce cross-domain imports
+4. Introduce ownership metadata for all libraries
+5. Track drift via snapshots in CI
