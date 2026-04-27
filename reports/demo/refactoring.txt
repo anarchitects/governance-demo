@@ -1,0 +1,5 @@
+Refactoring suggestions:
+- Extract domain-specific utilities from shared-utils
+- Introduce domain-level libraries with strict boundaries
+- Replace cross-domain imports with API contracts
+- Gradually reduce fanout from shared-ui
